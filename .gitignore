@@ -1,0 +1,13 @@
+# node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# go
+backend/api
+backend/api.exe
+
+# editor / os
+.DS_Store
+.idea/
+*.log
