@@ -47,14 +47,12 @@ const streets = [
   "Camino Centenario", "Av. Costanera", "Ruta Provincial 2", "Av. Juan B. Justo",
 ];
 
-// sample media (Google's public test-video bucket)
-const bucket = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample";
-const clips = [
-  "BigBuckBunny", "ElephantsDream", "ForBiggerBlazes", "ForBiggerEscapes",
-  "ForBiggerFun", "ForBiggerJoyrides", "ForBiggerMeltdowns", "Sintel",
-  "SubaruOutbackOnStreetAndDirt", "TearsOfSteel", "VolkswagenGTIReview",
-  "WeAreGoingOnBunny",
-];
+// sample media — Mozilla's CC0 sample clips, actively maintained for MDN's
+// own <video> docs (the old Google gtv-videos-bucket now 403s on every file).
+// Only two clips exist at this path, and there's no poster image to pair
+// with them, hence the empty thumbnail below.
+const bucket = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos";
+const clips = ["flower", "friday"];
 
 const pad = (n) => String(n).padStart(2, "0");
 
@@ -98,7 +96,7 @@ for (const day of days) {
       durationSec: 15 + Math.floor(rand() * 46), // 15..60s
       lightLux: 400 + Math.floor(rand() * 9000), // passed the on-device light check
       url: `${bucket}/${clip}.mp4`,
-      thumbnail: `${bucket}/images/${clip}.jpg`,
+      thumbnail: "",
     });
   }
 }

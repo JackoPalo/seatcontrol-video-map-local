@@ -18,7 +18,7 @@ export async function GET(
   const detail: VideoDetail = {
     ...summary,
     url: `/api/stream/${video.id}`,
-    thumbnail: `/api/thumb/${video.id}`,
+    thumbnail: video.thumbnail ? `/api/thumb/${video.id}` : "",
   };
   return NextResponse.json(detail);
 }

@@ -80,7 +80,7 @@ function VideoPopupBody({ video }: { video: VideoSummary }) {
         <video
           controls
           preload="none"
-          poster={detail.thumbnail}
+          poster={detail.thumbnail || undefined}
           src={detail.url}
           className="block h-[146px] w-full bg-black object-cover"
         />

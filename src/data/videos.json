@@ -11,8 +11,8 @@
     "date": "2026-08-18",
     "durationSec": 33,
     "lightLux": 5562,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1007,
@@ -26,8 +26,8 @@
     "date": "2026-08-18",
     "durationSec": 56,
     "lightLux": 2672,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1000,
@@ -41,8 +41,8 @@
     "date": "2026-08-18",
     "durationSec": 35,
     "lightLux": 6510,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1002,
@@ -56,8 +56,8 @@
     "date": "2026-08-18",
     "durationSec": 42,
     "lightLux": 8934,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1050,
@@ -71,8 +71,8 @@
     "date": "2026-08-18",
     "durationSec": 23,
     "lightLux": 6820,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1006,
@@ -86,8 +86,8 @@
     "date": "2026-08-18",
     "durationSec": 28,
     "lightLux": 8894,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBunny.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBunny.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1004,
@@ -101,8 +101,8 @@
     "date": "2026-08-18",
     "durationSec": 21,
     "lightLux": 6882,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1009,
@@ -116,8 +116,8 @@
     "date": "2026-08-18",
     "durationSec": 19,
     "lightLux": 2167,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1001,
@@ -131,8 +131,8 @@
     "date": "2026-08-18",
     "durationSec": 28,
     "lightLux": 6282,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1014,
@@ -146,8 +146,8 @@
     "date": "2026-08-19",
     "durationSec": 32,
     "lightLux": 888,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1015,
@@ -161,8 +161,8 @@
     "date": "2026-08-19",
     "durationSec": 23,
     "lightLux": 3567,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1011,
@@ -176,8 +176,8 @@
     "date": "2026-08-19",
     "durationSec": 38,
     "lightLux": 7610,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1013,
@@ -191,8 +191,8 @@
     "date": "2026-08-19",
     "durationSec": 15,
     "lightLux": 2622,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1012,
@@ -206,8 +206,8 @@
     "date": "2026-08-19",
     "durationSec": 52,
     "lightLux": 4708,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1016,
@@ -221,8 +221,8 @@
     "date": "2026-08-19",
     "durationSec": 53,
     "lightLux": 4643,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1019,
@@ -236,8 +236,8 @@
     "date": "2026-08-20",
     "durationSec": 50,
     "lightLux": 9224,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1023,
@@ -251,8 +251,8 @@
     "date": "2026-08-20",
     "durationSec": 47,
     "lightLux": 7006,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1024,
@@ -266,8 +266,8 @@
     "date": "2026-08-20",
     "durationSec": 38,
     "lightLux": 3756,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBunny.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBunny.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1022,
@@ -281,8 +281,8 @@
     "date": "2026-08-20",
     "durationSec": 42,
     "lightLux": 3197,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1018,
@@ -296,8 +296,8 @@
     "date": "2026-08-20",
     "durationSec": 60,
     "lightLux": 9187,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1020,
@@ -311,8 +311,8 @@
     "date": "2026-08-20",
     "durationSec": 41,
     "lightLux": 5458,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1025,
@@ -326,8 +326,8 @@
     "date": "2026-08-21",
     "durationSec": 43,
     "lightLux": 5594,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1028,
@@ -341,8 +341,8 @@
     "date": "2026-08-21",
     "durationSec": 28,
     "lightLux": 2347,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1031,
@@ -356,8 +356,8 @@
     "date": "2026-08-22",
     "durationSec": 59,
     "lightLux": 2366,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1030,
@@ -371,8 +371,8 @@
     "date": "2026-08-22",
     "durationSec": 45,
     "lightLux": 531,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1029,
@@ -386,8 +386,8 @@
     "date": "2026-08-22",
     "durationSec": 22,
     "lightLux": 5161,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1035,
@@ -401,8 +401,8 @@
     "date": "2026-08-23",
     "durationSec": 41,
     "lightLux": 1881,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1038,
@@ -416,8 +416,8 @@
     "date": "2026-08-23",
     "durationSec": 35,
     "lightLux": 2513,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1036,
@@ -431,8 +431,8 @@
     "date": "2026-08-23",
     "durationSec": 41,
     "lightLux": 4633,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1033,
@@ -446,8 +446,8 @@
     "date": "2026-08-23",
     "durationSec": 35,
     "lightLux": 403,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1043,
@@ -461,8 +461,8 @@
     "date": "2026-08-24",
     "durationSec": 44,
     "lightLux": 7830,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1041,
@@ -476,8 +476,8 @@
     "date": "2026-08-24",
     "durationSec": 43,
     "lightLux": 8498,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1039,
@@ -491,8 +491,8 @@
     "date": "2026-08-24",
     "durationSec": 36,
     "lightLux": 7944,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1042,
@@ -506,8 +506,8 @@
     "date": "2026-08-24",
     "durationSec": 19,
     "lightLux": 6439,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1046,
@@ -521,8 +521,8 @@
     "date": "2026-08-25",
     "durationSec": 15,
     "lightLux": 8142,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1049,
@@ -536,8 +536,8 @@
     "date": "2026-08-25",
     "durationSec": 39,
     "lightLux": 3925,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1045,
@@ -551,8 +551,8 @@
     "date": "2026-08-25",
     "durationSec": 51,
     "lightLux": 5478,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "thumbnail": ""
   },
   {
     "id": 1048,
@@ -566,7 +566,7 @@
     "date": "2026-08-25",
     "durationSec": 58,
     "lightLux": 454,
-    "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-    "thumbnail": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg"
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "thumbnail": ""
   }
 ]

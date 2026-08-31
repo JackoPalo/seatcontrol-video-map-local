@@ -7,6 +7,6 @@ export async function GET(
 ) {
   const { id } = await params;
   const video = getVideoById(Number(id));
-  if (!video) return new Response(null, { status: 404 });
+  if (!video || !video.thumbnail) return new Response(null, { status: 404 });
   return proxyMedia(video.thumbnail, req);
 }
