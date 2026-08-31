@@ -1,16 +1,17 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
-  CircleMarker,
-  MapContainer,
-  Popup,
-  TileLayer,
-  useMap,
+CircleMarker,
+MapContainer,
+Popup,
+TileLayer,
+useMap,
 } from "react-leaflet";
 import { LatLngBounds } from "leaflet";
-import type { Video } from "@/types";
+import type { VideoDetail, VideoSummary } from "@/types";
 import { colorForDate } from "@/lib/palette";
+import { api } from "@/lib/api";
 
 // Argentina, roughly centred so the first paint shows the whole fleet area.
 const INITIAL_CENTER: [number, number] = [-34.9, -63.0];
@@ -33,7 +34,7 @@ const BASEMAPS = {
 
 export type Basemap = keyof typeof BASEMAPS;
 
-function FitToVideos({ videos }: { videos: Video[] }) {
+function FitToVideos({ videos }: { videos: VideoSummary[] }) {
   const map = useMap();
   useEffect(() => {
     if (videos.length === 0) return;
@@ -52,11 +53,64 @@ function timeLabel(iso: string) {
   });
 }
 
+// Playable links only exist behind /api/videos/:id, fetched the moment a
+// popup is actually opened — the bulk /api/videos list never carries them.
+function VideoPopupBody({ video }: { video: VideoSummary }) {
+  const [detail, setDetail] = useState<VideoDetail | null>(null);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    api
+      .videoDetail(video.id)
+      .then((d) => {
+        if (!cancelled) setDetail(d);
+      })
+      .catch(() => {
+        if (!cancelled) setFailed(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [video.id]);
+
+  return (
+    <div className="overflow-hidden rounded-md">
+      {detail ? (
+        <video
+          controls
+          preload="none"
+          poster={detail.thumbnail}
+          src={detail.url}
+          className="block h-[146px] w-full bg-black object-cover"
+        />
+      ) : (
+        <div className="flex h-[146px] w-full items-center justify-center bg-black text-xs text-white/60">
+          {failed ? "No se pudo cargar el video" : "Cargando…"}
+        </div>
+      )}
+      <div className="space-y-1 p-3">
+        <div className="flex items-center justify-between gap-2">
+          <span className="text-sm font-semibold">{video.city}</span>
+          <span className="rounded bg-secondary px-1.5 py-0.5 text-[11px] text-secondary-foreground">
+            {video.deviceId}
+            {video.deviceName ? ` · ${video.deviceName}` : ""}
+          </span>
+        </div>
+        <p className="text-xs text-muted-foreground">{video.address}</p>
+        <p className="text-xs text-muted-foreground">
+          {timeLabel(video.recordedAt)} · {video.durationSec}s · {video.lightLux} lux
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function VideoMap({
   videos,
   basemap = "light",
 }: {
-  videos: Video[];
+  videos: VideoSummary[];
   basemap?: Basemap;
 }) {
   // Stable radius; larger dots when few points are on screen.
@@ -86,28 +140,7 @@ export function VideoMap({
           }}
         >
           <Popup>
-            <div className="overflow-hidden rounded-md">
-              <video
-                controls
-                preload="none"
-                poster={v.thumbnail}
-                src={v.url}
-                className="block h-[146px] w-full bg-black object-cover"
-              />
-              <div className="space-y-1 p-3">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-sm font-semibold">{v.city}</span>
-                  <span className="rounded bg-secondary px-1.5 py-0.5 text-[11px] text-secondary-foreground">
-                    {v.deviceId}
-                    {v.deviceName ? ` · ${v.deviceName}` : ""}
-                  </span>
-                </div>
-                <p className="text-xs text-muted-foreground">{v.address}</p>
-                <p className="text-xs text-muted-foreground">
-                  {timeLabel(v.recordedAt)} · {v.durationSec}s · {v.lightLux} lux
-                </p>
-              </div>
-            </div>
+            <VideoPopupBody video={v} />
           </Popup>
         </CircleMarker>
       ))}

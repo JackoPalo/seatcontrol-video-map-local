@@ -6,6 +6,9 @@ node_modules/
 out/
 next-env.d.ts.bak
 
+# typescript
+*.tsbuildinfo
+
 # editor / os
 .DS_Store
 .idea/

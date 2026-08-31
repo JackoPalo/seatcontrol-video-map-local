@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { MapPin, Loader2, AlertTriangle, Calendar, X, Settings } from "lucide-react";
 import { api } from "@/lib/api";
-import type { DeviceCount, Video } from "@/types";
+import type { DeviceCount, VideoSummary } from "@/types"; 
 import { registerDates } from "@/lib/palette";
 import { DaySidebar } from "@/components/DaySidebar";
 import { DevicePanel } from "@/components/DevicePanel";
@@ -22,7 +22,7 @@ function pillDate(date: string) {
 }
 
 export default function Page() {
-  const [allVideos, setAllVideos] = useState<Video[]>([]);
+  const [allVideos, setAllVideos] = useState<VideoSummary[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
   const [device, setDevice] = useState<string | null>(null);
   const [basemap, setBasemap] = useState<Basemap>("light");
