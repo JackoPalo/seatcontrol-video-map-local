@@ -4,47 +4,47 @@ A small demo site for showing a client what the **video capture** feature of the
 SeatControl fleet devices can do. Each on-vehicle device records a short clip
 when the vehicle stays parked long enough with sufficient ambient light, then
 uploads it together with its GPS position. This site plots those uploads on a
-map and lets you browse them **day by day**.
+map and lets you browse them **day by day**, with a device filter.
 
 > This is a **Future Feature preview**. The data here is mock data
-> (`backend/data/videos.json`) — no real backend or database is wired in yet.
+> (`src/data/videos.json`) — no real backend or database is wired in yet.
 
 ## Stack
 
-| Part     | Tech                                           |
-| -------- | --------------------------------------------- |
-| Backend  | Go (stdlib `net/http`), JSON embedded at build |
-| Frontend | Vite + React + TypeScript, Tailwind + shadcn-style UI, Leaflet / OpenStreetMap |
-| Runtime  | Docker Compose (nginx serves the SPA and proxies `/api`) |
+| Part     | Tech                                                              |
+| -------- | ------------------------------------------------------------------ |
+| Framework | Next.js (App Router) + TypeScript                                 |
+| API      | Next.js Route Handlers under `src/app/api/*`, serving the mock JSON |
+| UI       | Tailwind + shadcn-style UI, Leaflet / OpenStreetMap via react-leaflet |
+| Deploy   | Vercel                                                             |
 
-## Run with Docker
-
-```bash
-docker compose up --build
-```
-
-Then open <http://localhost:8080>. The API is also exposed on
-<http://localhost:8081/api/summary> for debugging.
-
-## Run locally (without Docker)
+## Run locally
 
 ```bash
-# terminal 1 — API on :8080
-cd backend
-go run .
-
-# terminal 2 — dev server on :5173, proxies /api to :8080
-cd frontend
 npm install
 npm run dev
 ```
 
+Open <http://localhost:3000>.
+
+## Deploy to Vercel
+
+This is a standard Next.js app, so it deploys with zero config:
+
+```bash
+npx vercel
+```
+
+or connect the repo in the Vercel dashboard and it will detect Next.js
+automatically (`npm run build` / `.next` output).
+
 ## API
 
 | Endpoint             | Description                                             |
-| -------------------- | ----------------------------------------------------- |
+| --------------------- | ------------------------------------------------------- |
 | `GET /api/summary`   | `[{ date, count }]` — one entry per active day, oldest first |
-| `GET /api/videos`    | All videos. Filter with `?date=YYYY-MM-DD`, or `?from=&to=` |
+| `GET /api/devices`   | `[{ deviceId, name, count }]` — one entry per device that has uploaded |
+| `GET /api/videos`    | All videos. Filter with `?date=YYYY-MM-DD` (or `?from=&to=`) and/or `?device=<deviceId>` |
 | `GET /api/health`    | Liveness + loaded video count                          |
 
 ### Video shape
@@ -53,6 +53,7 @@ npm run dev
 {
   "id": 1000,
   "deviceId": "SC-118",
+  "deviceName": "Nacho",
   "city": "Rosario",
   "address": "Bv. Oroño 2450",
   "lat": -32.9442,
@@ -69,8 +70,7 @@ npm run dev
 ## Regenerating mock data
 
 ```bash
-cd backend/data
-node gen-mock.mjs > videos.json
+node scripts/gen-mock.mjs > src/data/videos.json
 ```
 
 The generator is seeded, so re-running it produces the same set unless you
@@ -78,7 +78,9 @@ change the seed or parameters.
 
 ## Wiring a real backend later
 
-Replace the `videos.json` embed in `backend/main.go` with a real data source
-(the SeatControl devices API already reports `id / lat / lng / time` per
-`videoUploaded` event over WebSocket). The frontend only depends on the two
-endpoints above, so it needs no changes.
+Replace the `src/data/videos.json` import in `src/lib/videos.ts` with a real
+data source (the SeatControl devices API already reports `id / lat / lng /
+time` per `videoUploaded` event over WebSocket, and each on-vehicle device is
+identified by its `deviceId`). The frontend only depends on the `/api/*`
+endpoints above, so it needs no changes as long as they keep returning the
+same shapes.
