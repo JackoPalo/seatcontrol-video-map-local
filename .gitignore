@@ -1,11 +1,10 @@
 # node
 node_modules/
-frontend/dist/
-frontend/.vite/
 
-# go
-backend/api
-backend/api.exe
+# next.js
+.next/
+out/
+next-env.d.ts.bak
 
 # editor / os
 .DS_Store
