@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import { MapPin, Loader2, AlertTriangle, Calendar, X, Settings } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { MapPin, Loader2, AlertTriangle, Calendar, X, Settings, LogOut } from "lucide-react";
 import { api } from "@/lib/api";
 import type { DeviceCount, VideoSummary } from "@/types"; 
 import { registerDates } from "@/lib/palette";
@@ -22,6 +23,7 @@ function pillDate(date: string) {
 }
 
 export default function Page() {
+  const router = useRouter();
   const [allVideos, setAllVideos] = useState<VideoSummary[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
   const [device, setDevice] = useState<string | null>(null);
@@ -81,6 +83,12 @@ export default function Page() {
 
   const filtered = selected !== null || device !== null;
 
+  async function logout() {
+    await fetch("/api/logout", { method: "POST" });
+    router.push("/login");
+    router.refresh();
+  }
+
   return (
     <div className="flex h-screen w-screen flex-col overflow-hidden">
       <header className="flex items-center gap-3 border-b bg-card px-4 py-2.5">
@@ -122,13 +130,22 @@ export default function Page() {
           </div>
         </div>
 
-        <button
-          onClick={() => setBasemap((b) => (b === "dark" ? "light" : "dark"))}
-          className="flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground hover:bg-accent hover:text-foreground"
-          title={`Mapa ${basemap === "dark" ? "claro" : "oscuro"}`}
-        >
-          <Settings className="h-4 w-4" />
-        </button>
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={() => setBasemap((b) => (b === "dark" ? "light" : "dark"))}
+            className="flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground hover:bg-accent hover:text-foreground"
+            title={`Mapa ${basemap === "dark" ? "claro" : "oscuro"}`}
+          >
+            <Settings className="h-4 w-4" />
+          </button>
+          <button
+            onClick={logout}
+            className="flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground hover:bg-accent hover:text-foreground"
+            title="Cerrar sesión"
+          >
+            <LogOut className="h-4 w-4" />
+          </button>
+        </div>
       </header>
 
       <div className="flex min-h-0 flex-1">

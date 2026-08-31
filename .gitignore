@@ -9,6 +9,11 @@ next-env.d.ts.bak
 # typescript
 *.tsbuildinfo
 
+# env
+.env
+.env.local
+.env.*.local
+
 # editor / os
 .DS_Store
 .idea/
