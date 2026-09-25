@@ -91,15 +91,25 @@ function VideoPopupBody({ video }: { video: VideoSummary }) {
       )}
       <div className="space-y-1 p-3">
         <div className="flex items-center justify-between gap-2">
-          <span className="text-sm font-semibold">{video.city}</span>
+          {video.city && (
+            <span className="text-sm font-semibold">{video.city}</span>
+          )}
           <span className="rounded bg-secondary px-1.5 py-0.5 text-[11px] text-secondary-foreground">
             {video.deviceId}
             {video.deviceName ? ` · ${video.deviceName}` : ""}
           </span>
         </div>
-        <p className="text-xs text-muted-foreground">{video.address}</p>
+        {video.address && (
+          <p className="text-xs text-muted-foreground">{video.address}</p>
+        )}
         <p className="text-xs text-muted-foreground">
-          {timeLabel(video.recordedAt)} · {video.durationSec}s · {video.lightLux} lux
+          {[
+            timeLabel(video.recordedAt),
+            video.durationSec ? `${video.durationSec}s` : null,
+            video.lightLux ? `${video.lightLux} lux` : null,
+          ]
+            .filter(Boolean)
+            .join(" · ")}
         </p>
       </div>
     </div>

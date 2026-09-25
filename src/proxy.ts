@@ -6,6 +6,9 @@ const PUBLIC_PATHS = new Set(["/login", "/api/login"]);
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   if (PUBLIC_PATHS.has(pathname)) return NextResponse.next();
+  // Devices authenticate with their own bearer token (checked in the route
+  // handlers), not the site's login cookie.
+  if (pathname.startsWith("/api/ingest/")) return NextResponse.next();
 
   const cookie = req.cookies.get(SESSION_COOKIE)?.value;
   if (await isValidSession(cookie)) return NextResponse.next();
