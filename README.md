@@ -21,15 +21,30 @@ map and lets you browse them **day by day**, with a device filter.
 ## Run locally
 
 ```bash
+cp .env.example .env.local   # set AUTH_USER / AUTH_PASSWORD
 npm install
 npm run dev
 ```
 
-Open <http://localhost:3000>.
+Open <http://localhost:3000> — you'll be redirected to `/login`.
+
+## Auth
+
+The whole site sits behind a single hardcoded login (`src/proxy.ts` +
+`src/lib/auth.ts`), gating pages and `/api/*` alike. There's no user table:
+`AUTH_USER` / `AUTH_PASSWORD` are read from environment variables, and the
+session is a cookie holding a hash of the password — no server-side session
+store needed.
+
+**On Vercel**, set `AUTH_USER` and `AUTH_PASSWORD` under Project Settings ->
+Environment Variables before the first deploy (or the login will always
+fail, since those vars default to unset). `.env.local` is gitignored and
+never leaves your machine.
 
 ## Deploy to Vercel
 
-This is a standard Next.js app, so it deploys with zero config:
+This is a standard Next.js app, so it deploys with zero config beyond the
+env vars above:
 
 ```bash
 npx vercel
