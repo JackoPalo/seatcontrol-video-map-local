@@ -74,6 +74,21 @@
   width: 260px !important;
 }
 
+/* Clip count drawn on top of a grouped marker (permanent Leaflet tooltip). */
+.leaflet-tooltip.clip-count {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  color: #0b1220;
+  font-size: 11px;
+  font-weight: 700;
+  pointer-events: none;
+}
+.leaflet-tooltip.clip-count::before {
+  display: none;
+}
+
 .leaflet-container a.leaflet-popup-close-button {
   color: hsl(var(--muted-foreground));
 }
