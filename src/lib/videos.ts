@@ -2,6 +2,7 @@ import type { DayCount, DeviceCount, Video, VideoSummary } from "@/types";
 import raw from "@/data/videos.json";
 import { fetchRealVideos, isBackendConfigured } from "@/lib/backendClient";
 import { fetchIngestVideos, isIngestConfigured } from "@/lib/ingestStore";
+import { getAliases } from "@/lib/aliases";
 
 // Short TTL: in a live demo a new clip should show up within seconds.
 const CACHE_TTL_MS = 15_000;
@@ -27,6 +28,15 @@ async function loadVideos(): Promise<Video[]> {
   return videos;
 }
 
+// Aliases are joined after the video cache on purpose: renaming a device
+// shows up on the next request, not when the video list cache expires.
+async function withAliases(videos: Video[]): Promise<Video[]> {
+  const aliases = await getAliases();
+  return videos.map((v) =>
+    aliases[v.deviceId] ? { ...v, deviceAlias: aliases[v.deviceId] } : v
+  );
+}
+
 function toSummary(v: Video): VideoSummary {
   const { url: _url, thumbnail: _thumbnail, ...summary } = v;
   return summary;
@@ -42,7 +52,7 @@ export async function getVideos(filter: {
   to?: string;
   device?: string;
 }): Promise<VideoSummary[]> {
-  const videos = await loadVideos();
+  const videos = await withAliases(await loadVideos());
   return videos
     .filter((v) => {
       if (filter.date && v.date !== filter.date) return false;
@@ -58,7 +68,7 @@ export async function getVideos(filter: {
 // (route handlers) either strip them (detail response, proxy paths instead)
 // or use them internally to fetch bytes from upstream (stream/thumb proxies).
 export async function getVideoById(id: number): Promise<Video | undefined> {
-  const videos = await loadVideos();
+  const videos = await withAliases(await loadVideos());
   return videos.find((v) => v.id === id);
 }
 
@@ -79,10 +89,12 @@ export async function getDevices(): Promise<DeviceCount[]> {
     counts.set(v.deviceId, (counts.get(v.deviceId) ?? 0) + 1);
     if (v.deviceName) names.set(v.deviceId, v.deviceName);
   }
+  const aliases = await getAliases();
   return [...counts.entries()]
     .map(([deviceId, count]) => ({
       deviceId,
       name: names.get(deviceId) ?? "",
+      alias: aliases[deviceId],
       count,
     }))
     .sort((a, b) => a.deviceId.localeCompare(b.deviceId));

@@ -46,16 +46,37 @@ export default function Page() {
   // Device list is derived from the loaded catalogue so the filter always
   // matches what is actually on the map.
   const devices = useMemo<DeviceCount[]>(() => {
-    const acc = new Map<string, { name: string; count: number }>();
+    const acc = new Map<string, { name: string; alias?: string; count: number }>();
     for (const v of allVideos) {
-      const cur = acc.get(v.deviceId) ?? { name: v.deviceName, count: 0 };
+      const cur = acc.get(v.deviceId) ?? {
+        name: v.deviceName,
+        alias: v.deviceAlias,
+        count: 0,
+      };
       cur.count += 1;
       acc.set(v.deviceId, cur);
     }
     return [...acc.entries()]
-      .map(([deviceId, { name, count }]) => ({ deviceId, name, count }))
-      .sort((a, b) => a.deviceId.localeCompare(b.deviceId));
+      .map(([deviceId, { name, alias, count }]) => ({ deviceId, name, alias, count }))
+      .sort((a, b) =>
+        (a.alias || a.deviceId).localeCompare(b.alias || b.deviceId)
+      );
   }, [allVideos]);
+
+  // Aliases are applied server-side to every clip of the device; mirror the
+  // change locally so the map and panels update without a reload.
+  async function renameDevice(deviceId: string, alias: string) {
+    const saved = await api.setAlias(deviceId, alias);
+    setAllVideos((vs) =>
+      vs.map((v) =>
+        v.deviceId === deviceId ? { ...v, deviceAlias: saved || undefined } : v
+      )
+    );
+  }
+
+  const deviceLabel = device
+    ? devices.find((d) => d.deviceId === device)?.alias || device
+    : null;
 
   const byDevice = useMemo(
     () => (device ? allVideos.filter((v) => v.deviceId === device) : allVideos),
@@ -112,7 +133,7 @@ export default function Page() {
             {device && (
               <>
                 <span className="text-muted-foreground">|</span>
-                <span className="font-medium">{device}</span>
+                <span className="font-medium">{deviceLabel}</span>
               </>
             )}
             {filtered && (
@@ -171,7 +192,7 @@ export default function Page() {
               <VideoMap videos={visible} basemap={basemap} />
               <div className="pointer-events-none absolute bottom-4 left-1/2 z-[500] -translate-x-1/2 rounded-full bg-card/90 px-3 py-1 text-xs text-muted-foreground shadow-sm backdrop-blur">
                 {visible.length} videos
-                {device ? ` · ${device}` : ""}
+                {deviceLabel ? ` · ${deviceLabel}` : ""}
                 {selected ? ` · ${selected}` : " · todos los días"}
               </div>
             </main>
@@ -179,6 +200,7 @@ export default function Page() {
               devices={devices}
               selected={device}
               onSelect={setDevice}
+              onRename={renameDevice}
             />
           </>
         )}

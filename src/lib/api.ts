@@ -19,4 +19,15 @@ import type { DayCount, DeviceCount, VideoDetail, VideoSummary } from "@/types";
     },
     // Fetched on demand — the only call that resolves to a playable link. 
     videoDetail: (id: number) => get<VideoDetail>(`/api/videos/${id}`),
+    // Empty alias removes it. Resolves to the alias actually stored.
+    setAlias: async (deviceId: string, alias: string): Promise<string> => {
+      const res = await fetch(`/api/devices/${encodeURIComponent(deviceId)}/alias`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ alias }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error ?? `alias -> ${res.status}`);
+      return body.alias as string;
+    },
 };

@@ -4,6 +4,9 @@ export interface Video {
   id: number;
   deviceId: string;
   deviceName: string;
+  // Friendly name set from the site (src/lib/aliases.ts); shown instead of
+  // deviceId when present.
+  deviceAlias?: string;
   city: string;
   address: string;
   lat: number;
@@ -37,5 +40,6 @@ export interface DayCount {
 export interface DeviceCount {
   deviceId: string;
   name: string;
+  alias?: string;
   count: number;
 }
