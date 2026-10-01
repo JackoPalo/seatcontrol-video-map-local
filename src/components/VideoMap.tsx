@@ -10,6 +10,7 @@ Tooltip,
 useMap,
 } from "react-leaflet";
 import { LatLngBounds } from "leaflet";
+import { Maximize2 } from "lucide-react";
 import type { VideoDetail, VideoSummary } from "@/types";
 import { colorForDate } from "@/lib/palette";
 import { api } from "@/lib/api";
@@ -46,7 +47,7 @@ function FitToVideos({ videos }: { videos: VideoSummary[] }) {
   return null;
 }
 
-function timeLabel(iso: string) {
+export function timeLabel(iso: string) {
   return new Date(iso).toLocaleString("es-AR", {
     day: "2-digit",
     month: "short",
@@ -55,7 +56,7 @@ function timeLabel(iso: string) {
   });
 }
 
-function clockLabel(iso: string) {
+export function clockLabel(iso: string) {
   return new Date(iso).toLocaleTimeString("es-AR", {
     hour: "2-digit",
     minute: "2-digit",
@@ -66,7 +67,7 @@ function clockLabel(iso: string) {
 // Playable links only exist behind /api/videos/:id, fetched when a clip is
 // about to play (the current one, plus the next to preload it) — the bulk
 // /api/videos list never carries them.
-function useClipDetail(id: number | undefined) {
+export function useClipDetail(id: number | undefined) {
   const [detail, setDetail] = useState<VideoDetail | null>(null);
   const [failed, setFailed] = useState(false);
 
@@ -94,7 +95,13 @@ function useClipDetail(id: number | undefined) {
 // One marker = one stop. Its clips play back to back in the same player:
 // when one ends the next starts on its own, and the segmented bar shows
 // where you are and lets you jump to any clip.
-function GroupPopupBody({ group }: { group: ClipGroup }) {
+function GroupPopupBody({
+  group,
+  onExpand,
+}: {
+  group: ClipGroup;
+  onExpand?: (key: string) => void;
+}) {
   const { clips } = group;
   const [index, setIndex] = useState(0);
   // Only chain playback once the viewer has pressed play themselves.
@@ -166,6 +173,16 @@ function GroupPopupBody({ group }: { group: ClipGroup }) {
         </div>
       )}
       <ClipInfo video={clip} />
+      {onExpand && (
+        <div className="px-3 pb-3">
+          <button
+            onClick={() => onExpand(group.key)}
+            className="flex w-full items-center justify-center gap-1.5 rounded-md border py-1 text-xs font-medium hover:bg-accent"
+          >
+            <Maximize2 className="h-3.5 w-3.5" /> Ampliar
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -201,9 +218,11 @@ function ClipInfo({ video }: { video: VideoSummary }) {
 export function VideoMap({
   videos,
   basemap = "light",
+  onExpand,
 }: {
   videos: VideoSummary[];
   basemap?: Basemap;
+  onExpand?: (groupKey: string) => void;
 }) {
   const groups = useMemo(() => groupClips(videos), [videos]);
   // Stable radius; larger dots when few points are on screen.
@@ -239,7 +258,7 @@ export function VideoMap({
             </Tooltip>
           )}
           <Popup>
-            <GroupPopupBody group={g} />
+            <GroupPopupBody group={g} onExpand={onExpand} />
           </Popup>
         </CircleMarker>
       ))}

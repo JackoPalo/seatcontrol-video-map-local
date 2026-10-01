@@ -3,13 +3,15 @@
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { MapPin, Loader2, AlertTriangle, Calendar, X, Settings, LogOut } from "lucide-react";
+import { MapPin, Loader2, AlertTriangle, Calendar, X, Settings, LogOut, LayoutGrid } from "lucide-react";
 import { api } from "@/lib/api";
 import type { DeviceCount, VideoSummary } from "@/types"; 
 import { registerDates } from "@/lib/palette";
 import { DaySidebar } from "@/components/DaySidebar";
 import { DevicePanel } from "@/components/DevicePanel";
 import type { Basemap } from "@/components/VideoMap";
+import { VideoModal } from "@/components/VideoModal";
+import { groupClips } from "@/lib/groups";
 
 // Leaflet touches `window` on import, so the map can only render client-side.
 const VideoMap = dynamic(
@@ -28,6 +30,8 @@ export default function Page() {
   const [selected, setSelected] = useState<string | null>(null);
   const [device, setDevice] = useState<string | null>(null);
   const [basemap, setBasemap] = useState<Basemap>("light");
+  // null = closed; "" = open on the full list; otherwise a group key to play.
+  const [modalKey, setModalKey] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -102,6 +106,8 @@ export default function Page() {
     [byDevice, selected]
   );
 
+  const groups = useMemo(() => groupClips(visible), [visible]);
+
   const filtered = selected !== null || device !== null;
 
   async function logout() {
@@ -153,6 +159,14 @@ export default function Page() {
 
         <div className="flex items-center gap-1.5">
           <button
+            onClick={() => setModalKey("")}
+            disabled={visible.length === 0}
+            className="flex h-8 items-center gap-1.5 rounded-md border px-2.5 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-foreground disabled:opacity-50"
+            title="Ver todos los videos en una lista"
+          >
+            <LayoutGrid className="h-4 w-4" /> Galería
+          </button>
+          <button
             onClick={() => setBasemap((b) => (b === "dark" ? "light" : "dark"))}
             className="flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground hover:bg-accent hover:text-foreground"
             title={`Mapa ${basemap === "dark" ? "claro" : "oscuro"}`}
@@ -189,7 +203,7 @@ export default function Page() {
               total={byDevice.length}
             />
             <main className="relative min-w-0 flex-1">
-              <VideoMap videos={visible} basemap={basemap} />
+              <VideoMap videos={visible} basemap={basemap} onExpand={setModalKey} />
               <div className="pointer-events-none absolute bottom-4 left-1/2 z-[500] -translate-x-1/2 rounded-full bg-card/90 px-3 py-1 text-xs text-muted-foreground shadow-sm backdrop-blur">
                 {visible.length} videos
                 {deviceLabel ? ` · ${deviceLabel}` : ""}
@@ -205,6 +219,13 @@ export default function Page() {
           </>
         )}
       </div>
+      {modalKey !== null && (
+        <VideoModal
+          groups={groups}
+          initialKey={modalKey || undefined}
+          onClose={() => setModalKey(null)}
+        />
+      )}
     </div>
   );
 }
