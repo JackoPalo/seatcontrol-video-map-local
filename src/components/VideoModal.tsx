@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 import type { ClipGroup } from "@/lib/groups";
 import { clipSeconds } from "@/lib/groups";
 import { colorForDate } from "@/lib/palette";
-import { clockLabel, timeLabel, useClipDetail } from "@/components/VideoMap";
+import { clockLabel, timeLabel, useClipDetail } from "@/lib/clipUtils";
 
 function Player({ group }: { group: ClipGroup }) {
   const { clips } = group;
