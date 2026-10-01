@@ -78,6 +78,11 @@ export default function Page() {
     );
   }
 
+  async function removeVideo(id: number) {
+    await api.deleteVideo(id);
+    setAllVideos((vs) => vs.filter((v) => v.id !== id));
+  }
+
   const deviceLabel = device
     ? devices.find((d) => d.deviceId === device)?.alias || device
     : null;
@@ -223,6 +228,7 @@ export default function Page() {
         <VideoModal
           groups={groups}
           initialKey={modalKey || undefined}
+          onDelete={removeVideo}
           onClose={() => setModalKey(null)}
         />
       )}

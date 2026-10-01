@@ -1,4 +1,5 @@
 import {
+  del,
   head,
   issueSignedToken,
   list,
@@ -254,4 +255,12 @@ export async function fetchIngestVideos(): Promise<Video[]> {
     const url = m && videoUrls.get(videoPath(m.id));
     return m && url ? [toVideo(m, url)] : [];
   });
+}
+
+// Removes a published clip: the "done" marker goes first so the map stops
+// listing it even if a later delete fails, then the mp4 and the pending
+// metadata. Missing blobs are ignored, so a retry is safe.
+export async function deleteVideo(id: number): Promise<void> {
+  await del(donePath(id));
+  await del([videoPath(id), pendingPath(id)]);
 }

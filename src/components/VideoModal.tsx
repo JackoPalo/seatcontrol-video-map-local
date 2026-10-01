@@ -1,15 +1,25 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { X } from "lucide-react";
+import { Loader2, Trash2, X } from "lucide-react";
 import type { ClipGroup } from "@/lib/groups";
 import { clipSeconds } from "@/lib/groups";
 import { colorForDate } from "@/lib/palette";
 import { clockLabel, timeLabel, useClipDetail } from "@/lib/clipUtils";
 
-function Player({ group }: { group: ClipGroup }) {
+function Player({
+  group,
+  onDelete,
+}: {
+  group: ClipGroup;
+  onDelete: (id: number) => Promise<void>;
+}) {
   const { clips } = group;
-  const [index, setIndex] = useState(0);
+  const [rawIndex, setIndex] = useState(0);
+  // A deleted clip shrinks the group under us; never point past its end.
+  const index = Math.min(rawIndex, clips.length - 1);
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
   const clip = clips[index];
   const { detail, failed } = useClipDetail(clip.id);
@@ -27,6 +37,21 @@ function Player({ group }: { group: ClipGroup }) {
     setPlaying(true);
     setIndex(i);
   };
+
+  async function remove() {
+    if (!window.confirm("¿Eliminar este video? Esta acción no se puede deshacer.")) {
+      return;
+    }
+    setDeleting(true);
+    setDeleteError(null);
+    try {
+      await onDelete(clip.id);
+    } catch (e) {
+      setDeleteError(e instanceof Error ? e.message : "No se pudo eliminar");
+    } finally {
+      setDeleting(false);
+    }
+  }
 
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-3">
@@ -73,7 +98,8 @@ function Player({ group }: { group: ClipGroup }) {
         </div>
       )}
 
-      <div className="text-sm">
+      <div className="flex items-start justify-between gap-3 text-sm">
+       <div>
         <div className="flex flex-wrap items-center gap-2">
           {clip.city && <span className="font-semibold">{clip.city}</span>}
           <span className="rounded bg-secondary px-1.5 py-0.5 text-xs text-secondary-foreground">
@@ -89,6 +115,20 @@ function Player({ group }: { group: ClipGroup }) {
           {clip.durationSec ? ` · ${clip.durationSec}s` : ""}
           {clip.lightLux ? ` · ${clip.lightLux} lux` : ""}
         </p>
+        {deleteError && <p className="text-xs text-red-600">{deleteError}</p>}
+       </div>
+        <button
+          onClick={remove}
+          disabled={deleting}
+          className="flex shrink-0 items-center gap-1.5 rounded-md border border-red-300 px-2.5 py-1 text-xs font-medium text-red-600 hover:bg-red-50 disabled:opacity-50"
+        >
+          {deleting ? (
+            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+          ) : (
+            <Trash2 className="h-3.5 w-3.5" />
+          )}
+          Eliminar
+        </button>
       </div>
     </div>
   );
@@ -97,10 +137,12 @@ function Player({ group }: { group: ClipGroup }) {
 export function VideoModal({
   groups,
   initialKey,
+  onDelete,
   onClose,
 }: {
   groups: ClipGroup[];
   initialKey?: string;
+  onDelete: (id: number) => Promise<void>;
   onClose: () => void;
 }) {
   // Chronological list, regardless of device.
@@ -157,7 +199,7 @@ export function VideoModal({
 
         <div className="flex min-h-0 flex-1 flex-col gap-4 p-4 md:flex-row">
           {active ? (
-            <Player group={active} />
+            <Player group={active} onDelete={onDelete} />
           ) : (
             <p className="text-sm text-muted-foreground">Sin videos.</p>
           )}
