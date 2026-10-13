@@ -150,6 +150,7 @@ function ClipInfo({ video }: { video: VideoSummary }) {
           <span className="text-sm font-semibold">{video.city}</span>
         )}
         <span className="rounded bg-secondary px-1.5 py-0.5 text-[11px] text-secondary-foreground">
+          {video.sample ? "[Muestra] " : ""}
           {video.deviceAlias || video.deviceId}
           {video.deviceName ? ` · ${video.deviceName}` : ""}
         </span>

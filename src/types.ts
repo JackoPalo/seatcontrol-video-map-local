@@ -7,6 +7,9 @@ export interface Video {
   // Friendly name set from the site (src/lib/aliases.ts); shown instead of
   // deviceId when present.
   deviceAlias?: string;
+  // True for bundled demo clips (src/data/videos.json), false/absent for
+  // real uploads.
+  sample?: boolean;
   city: string;
   address: string;
   lat: number;

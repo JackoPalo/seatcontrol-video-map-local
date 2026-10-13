@@ -91,6 +91,14 @@ node scripts/gen-mock.mjs > src/data/videos.json
 The generator is seeded, so re-running it produces the same set unless you
 change the seed or parameters.
 
+## Samples next to real data
+
+The bundled samples (`src/data/videos.json`, playing `public/samples/people.mp4`)
+are shown on their own when no real source is configured. Set
+`SHOW_SAMPLES=true` to list them **together with** real uploads (device ingest
+or SeatControl backend); they are tagged `[Muestra]` in the popup. Remove the
+variable to show only real data.
+
 ## Wiring a real backend later
 
 Replace the `src/data/videos.json` import in `src/lib/videos.ts` with a real

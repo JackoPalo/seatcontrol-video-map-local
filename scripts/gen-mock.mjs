@@ -47,12 +47,10 @@ const streets = [
   "Camino Centenario", "Av. Costanera", "Ruta Provincial 2", "Av. Juan B. Justo",
 ];
 
-// sample media — Mozilla's CC0 sample clips, actively maintained for MDN's
-// own <video> docs (the old Google gtv-videos-bucket now 403s on every file).
-// Only two clips exist at this path, and there's no poster image to pair
-// with them, hence the empty thumbnail below.
-const bucket = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos";
-const clips = ["flower", "friday"];
+// sample media — a local clip served from public/samples (see README). Keeping it
+// in the repo avoids depending on third-party hosts; there is no poster image,
+// hence the empty thumbnail below.
+const clips = ["/samples/people.mp4"];
 
 const pad = (n) => String(n).padStart(2, "0");
 
@@ -95,7 +93,7 @@ for (const day of days) {
       date: `${y}-${mo}-${da}`,
       durationSec: 15 + Math.floor(rand() * 46), // 15..60s
       lightLux: 400 + Math.floor(rand() * 9000), // passed the on-device light check
-      url: `${bucket}/${clip}.mp4`,
+      url: clip,
       thumbnail: "",
     });
   }

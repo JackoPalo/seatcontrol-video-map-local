@@ -12,16 +12,31 @@ export function invalidateVideoCache(): void {
   cache = null;
 }
 
-// Source priority: direct device ingest (Vercel Blob) > SeatControl backend
-// > bundled mock data.
+// Sample ids are shifted far above anything real sources produce (backend ids
+// are small, ingest ids are ~1.7e15) so both can be listed together.
+const SAMPLE_ID_OFFSET = 1_000_000_000_000;
+
+function sampleVideos(): Video[] {
+  return (raw as Video[]).map((v) => ({
+    ...v,
+    id: v.id + SAMPLE_ID_OFFSET,
+    sample: true,
+  }));
+}
+
+// Source priority for real data: direct device ingest (Vercel Blob) >
+// SeatControl backend. The bundled samples are the fallback when neither is
+// configured, and are mixed in next to the real data when SHOW_SAMPLES=true.
 async function loadVideos(): Promise<Video[]> {
   if (cache && cache.expiresAt > Date.now()) return cache.videos;
 
-  const videos = isIngestConfigured()
+  const real = isIngestConfigured()
     ? await fetchIngestVideos()
     : isBackendConfigured()
       ? await fetchRealVideos()
-      : [...(raw as Video[])];
+      : null;
+  const showSamples = real === null || process.env.SHOW_SAMPLES === "true";
+  const videos = [...(real ?? []), ...(showSamples ? sampleVideos() : [])];
   videos.sort((a, b) => a.recordedAt.localeCompare(b.recordedAt));
 
   cache = { videos, expiresAt: Date.now() + CACHE_TTL_MS };

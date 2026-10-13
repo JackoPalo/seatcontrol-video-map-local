@@ -103,6 +103,7 @@ function Player({
         <div className="flex flex-wrap items-center gap-2">
           {clip.city && <span className="font-semibold">{clip.city}</span>}
           <span className="rounded bg-secondary px-1.5 py-0.5 text-xs text-secondary-foreground">
+            {clip.sample ? "[Muestra] " : ""}
             {clip.deviceAlias || clip.deviceId}
           </span>
         </div>
@@ -117,6 +118,7 @@ function Player({
         </p>
         {deleteError && <p className="text-xs text-red-600">{deleteError}</p>}
        </div>
+        {!clip.sample && (
         <button
           onClick={remove}
           disabled={deleting}
@@ -129,6 +131,7 @@ function Player({
           )}
           Eliminar
         </button>
+        )}
       </div>
     </div>
   );

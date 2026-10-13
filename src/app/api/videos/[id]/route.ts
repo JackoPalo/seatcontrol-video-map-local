@@ -3,6 +3,10 @@ import { getVideoById, invalidateVideoCache } from "@/lib/videos";
 import { deleteVideo, isIngestConfigured } from "@/lib/ingestStore";
 import type { VideoDetail } from "@/types";
 
+// Bundled samples live under public/ and are served by Next itself (behind the
+// same login), so there is no upstream origin to hide behind the proxy.
+const isLocal = (url: string) => url.startsWith("/");
+
 export async function GET(
   _req: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -18,8 +22,12 @@ export async function GET(
   const { url: _url, thumbnail: _thumbnail, ...summary } = video;
   const detail: VideoDetail = {
     ...summary,
-    url: `/api/stream/${video.id}`,
-    thumbnail: video.thumbnail ? `/api/thumb/${video.id}` : "",
+    url: isLocal(video.url) ? video.url : `/api/stream/${video.id}`,
+    thumbnail: !video.thumbnail
+      ? ""
+      : isLocal(video.thumbnail)
+        ? video.thumbnail
+        : `/api/thumb/${video.id}`,
   };
   return NextResponse.json(detail);
 }
@@ -41,8 +49,12 @@ export async function DELETE(
   if (!Number.isSafeInteger(id)) {
     return NextResponse.json({ error: "invalid id" }, { status: 400 });
   }
-  if (!(await getVideoById(id))) {
+  const video = await getVideoById(id);
+  if (!video) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
+  }
+  if (video.sample) {
+    return NextResponse.json({ error: "sample videos cannot be deleted" }, { status: 403 });
   }
 
   try {

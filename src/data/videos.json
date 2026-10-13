@@ -1,8 +1,23 @@
 [
   {
+    "id": 1008,
+    "deviceId": "SC-109",
+    "deviceName": "Carmona",
+    "city": "Rosario",
+    "address": "Av. Pellegrini 4044",
+    "lat": -32.980146,
+    "lng": -60.664476,
+    "recordedAt": "2026-08-18T07:21:03-03:00",
+    "date": "2026-08-18",
+    "durationSec": 49,
+    "lightLux": 7330,
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
     "id": 1003,
     "deviceId": "SC-102",
-    "deviceName": "Salva",
+    "deviceName": "El Rojo",
     "city": "Buenos Aires",
     "address": "Camino Centenario 4212",
     "lat": -34.680447,
@@ -11,13 +26,13 @@
     "date": "2026-08-18",
     "durationSec": 33,
     "lightLux": 5562,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1007,
-    "deviceId": "SC-101",
-    "deviceName": "Nacho",
+    "deviceId": "SC-108",
+    "deviceName": "Zeta",
     "city": "Rosario",
     "address": "Bv. Oroño 3016",
     "lat": -32.9036,
@@ -26,13 +41,13 @@
     "date": "2026-08-18",
     "durationSec": 56,
     "lightLux": 2672,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1000,
     "deviceId": "SC-102",
-    "deviceName": "Salva",
+    "deviceName": "El Rojo",
     "city": "Córdoba",
     "address": "Av. Juan B. Justo 567",
     "lat": -31.41015,
@@ -41,13 +56,13 @@
     "date": "2026-08-18",
     "durationSec": 35,
     "lightLux": 6510,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1002,
     "deviceId": "SC-107",
-    "deviceName": "Dario",
+    "deviceName": "Tano",
     "city": "Buenos Aires",
     "address": "Calle San Martín 545",
     "lat": -34.533749,
@@ -56,11 +71,11 @@
     "date": "2026-08-18",
     "durationSec": 42,
     "lightLux": 8934,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
-    "id": 1050,
+    "id": 1005,
     "deviceId": "SC-101",
     "deviceName": "Nacho",
     "city": "Buenos Aires",
@@ -71,13 +86,13 @@
     "date": "2026-08-18",
     "durationSec": 23,
     "lightLux": 6820,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1006,
     "deviceId": "SC-106",
-    "deviceName": "Santi",
+    "deviceName": "Colo",
     "city": "Mendoza",
     "address": "Av. Libertador 2856",
     "lat": -32.875779,
@@ -86,13 +101,13 @@
     "date": "2026-08-18",
     "durationSec": 28,
     "lightLux": 8894,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1004,
     "deviceId": "SC-104",
-    "deviceName": "Puma",
+    "deviceName": "Pumita",
     "city": "Córdoba",
     "address": "Av. Rivadavia 3037",
     "lat": -31.369147,
@@ -101,13 +116,13 @@
     "date": "2026-08-18",
     "durationSec": 21,
     "lightLux": 6882,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1009,
     "deviceId": "SC-106",
-    "deviceName": "Topper",
+    "deviceName": "Colo",
     "city": "Buenos Aires",
     "address": "Ruta Provincial 2 2592",
     "lat": -34.527219,
@@ -116,13 +131,13 @@
     "date": "2026-08-18",
     "durationSec": 19,
     "lightLux": 2167,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1001,
     "deviceId": "SC-103",
-    "deviceName": "David",
+    "deviceName": "La Negra",
     "city": "Rosario",
     "address": "Av. Rivadavia 1345",
     "lat": -32.975101,
@@ -131,13 +146,13 @@
     "date": "2026-08-18",
     "durationSec": 28,
     "lightLux": 6282,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1014,
     "deviceId": "SC-103",
-    "deviceName": "David",
+    "deviceName": "La Negra",
     "city": "Rosario",
     "address": "Av. Costanera 2691",
     "lat": -32.901228,
@@ -146,13 +161,13 @@
     "date": "2026-08-19",
     "durationSec": 32,
     "lightLux": 888,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1015,
-    "deviceId": "SC-102",
-    "deviceName": "Salva",
+    "deviceId": "SC-105",
+    "deviceName": "Rulo",
     "city": "Mar del Plata",
     "address": "Av. Pellegrini 3075",
     "lat": -38.046886,
@@ -161,7 +176,7 @@
     "date": "2026-08-19",
     "durationSec": 23,
     "lightLux": 3567,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -176,7 +191,7 @@
     "date": "2026-08-19",
     "durationSec": 38,
     "lightLux": 7610,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -191,13 +206,28 @@
     "date": "2026-08-19",
     "durationSec": 15,
     "lightLux": 2622,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1010,
+    "deviceId": "SC-108",
+    "deviceName": "Zeta",
+    "city": "La Plata",
+    "address": "Av. Costanera 4244",
+    "lat": -34.92046,
+    "lng": -57.998654,
+    "recordedAt": "2026-08-19T11:57:55-03:00",
+    "date": "2026-08-19",
+    "durationSec": 44,
+    "lightLux": 1153,
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1012,
     "deviceId": "SC-107",
-    "deviceName": "Dario",
+    "deviceName": "Tano",
     "city": "Buenos Aires",
     "address": "Ruta Provincial 2 287",
     "lat": -34.68329,
@@ -206,7 +236,7 @@
     "date": "2026-08-19",
     "durationSec": 52,
     "lightLux": 4708,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -221,7 +251,7 @@
     "date": "2026-08-19",
     "durationSec": 53,
     "lightLux": 4643,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -236,7 +266,7 @@
     "date": "2026-08-20",
     "durationSec": 50,
     "lightLux": 9224,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -251,13 +281,13 @@
     "date": "2026-08-20",
     "durationSec": 47,
     "lightLux": 7006,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1024,
     "deviceId": "SC-107",
-    "deviceName": "Dario",
+    "deviceName": "Tano",
     "city": "Buenos Aires",
     "address": "Ruta Provincial 2 4968",
     "lat": -34.586512,
@@ -266,7 +296,7 @@
     "date": "2026-08-20",
     "durationSec": 38,
     "lightLux": 3756,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -281,13 +311,13 @@
     "date": "2026-08-20",
     "durationSec": 42,
     "lightLux": 3197,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1018,
     "deviceId": "SC-103",
-    "deviceName": "David",
+    "deviceName": "La Negra",
     "city": "Rosario",
     "address": "Av. Colón 795",
     "lat": -33.000804,
@@ -296,13 +326,28 @@
     "date": "2026-08-20",
     "durationSec": 60,
     "lightLux": 9187,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1017,
+    "deviceId": "SC-108",
+    "deviceName": "Zeta",
+    "city": "Rosario",
+    "address": "Camino Centenario 4137",
+    "lat": -32.905858,
+    "lng": -60.625574,
+    "recordedAt": "2026-08-20T12:37:13-03:00",
+    "date": "2026-08-20",
+    "durationSec": 39,
+    "lightLux": 8772,
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1020,
-    "deviceId": "SC-102",
-    "deviceName": "Salva",
+    "deviceId": "SC-105",
+    "deviceName": "Rulo",
     "city": "Mar del Plata",
     "address": "Calle San Martín 4602",
     "lat": -38.007845,
@@ -311,13 +356,58 @@
     "date": "2026-08-20",
     "durationSec": 41,
     "lightLux": 5458,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1021,
+    "deviceId": "SC-109",
+    "deviceName": "Carmona",
+    "city": "Rosario",
+    "address": "Av. Libertador 3016",
+    "lat": -32.942617,
+    "lng": -60.703928,
+    "recordedAt": "2026-08-20T15:21:20-03:00",
+    "date": "2026-08-20",
+    "durationSec": 29,
+    "lightLux": 9242,
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1027,
+    "deviceId": "SC-109",
+    "deviceName": "Carmona",
+    "city": "Rosario",
+    "address": "Av. Rivadavia 4284",
+    "lat": -32.918569,
+    "lng": -60.692799,
+    "recordedAt": "2026-08-21T06:42:29-03:00",
+    "date": "2026-08-21",
+    "durationSec": 29,
+    "lightLux": 5207,
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1026,
+    "deviceId": "SC-109",
+    "deviceName": "Carmona",
+    "city": "Buenos Aires",
+    "address": "Av. Corrientes 2386",
+    "lat": -34.5658,
+    "lng": -58.399772,
+    "recordedAt": "2026-08-21T14:04:16-03:00",
+    "date": "2026-08-21",
+    "durationSec": 33,
+    "lightLux": 7832,
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1025,
     "deviceId": "SC-107",
-    "deviceName": "Dario",
+    "deviceName": "Tano",
     "city": "Buenos Aires",
     "address": "Av. Libertador 3429",
     "lat": -34.53305,
@@ -326,13 +416,13 @@
     "date": "2026-08-21",
     "durationSec": 43,
     "lightLux": 5594,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1028,
-    "deviceId": "SC-102",
-    "deviceName": "Salva",
+    "deviceId": "SC-105",
+    "deviceName": "Rulo",
     "city": "Buenos Aires",
     "address": "Av. Juan B. Justo 4153",
     "lat": -34.66876,
@@ -341,7 +431,22 @@
     "date": "2026-08-21",
     "durationSec": 28,
     "lightLux": 2347,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1032,
+    "deviceId": "SC-109",
+    "deviceName": "Carmona",
+    "city": "Rosario",
+    "address": "Av. Colón 2550",
+    "lat": -32.947761,
+    "lng": -60.608818,
+    "recordedAt": "2026-08-22T06:20:53-03:00",
+    "date": "2026-08-22",
+    "durationSec": 40,
+    "lightLux": 3758,
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -356,13 +461,13 @@
     "date": "2026-08-22",
     "durationSec": 59,
     "lightLux": 2366,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1030,
     "deviceId": "SC-103",
-    "deviceName": "David",
+    "deviceName": "La Negra",
     "city": "Rosario",
     "address": "Camino Centenario 4281",
     "lat": -32.963687,
@@ -371,13 +476,13 @@
     "date": "2026-08-22",
     "durationSec": 45,
     "lightLux": 531,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1029,
-    "deviceId": "SC-102",
-    "deviceName": "Salva",
+    "deviceId": "SC-105",
+    "deviceName": "Rulo",
     "city": "Mar del Plata",
     "address": "Av. Rivadavia 3240",
     "lat": -37.978745,
@@ -386,7 +491,7 @@
     "date": "2026-08-22",
     "durationSec": 22,
     "lightLux": 5161,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -401,7 +506,7 @@
     "date": "2026-08-23",
     "durationSec": 41,
     "lightLux": 1881,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -416,13 +521,13 @@
     "date": "2026-08-23",
     "durationSec": 35,
     "lightLux": 2513,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1036,
-    "deviceId": "SC-102",
-    "deviceName": "Salva",
+    "deviceId": "SC-105",
+    "deviceName": "Rulo",
     "city": "Mar del Plata",
     "address": "Camino Centenario 2748",
     "lat": -38.04126,
@@ -431,13 +536,43 @@
     "date": "2026-08-23",
     "durationSec": 41,
     "lightLux": 4633,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1037,
+    "deviceId": "SC-108",
+    "deviceName": "Zeta",
+    "city": "La Plata",
+    "address": "Av. Corrientes 799",
+    "lat": -34.965315,
+    "lng": -57.986013,
+    "recordedAt": "2026-08-23T10:21:33-03:00",
+    "date": "2026-08-23",
+    "durationSec": 40,
+    "lightLux": 3737,
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1034,
+    "deviceId": "SC-108",
+    "deviceName": "Zeta",
+    "city": "Córdoba",
+    "address": "Av. Pellegrini 3121",
+    "lat": -31.396528,
+    "lng": -64.256881,
+    "recordedAt": "2026-08-23T14:17:41-03:00",
+    "date": "2026-08-23",
+    "durationSec": 16,
+    "lightLux": 7453,
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1033,
     "deviceId": "SC-103",
-    "deviceName": "David",
+    "deviceName": "La Negra",
     "city": "Rosario",
     "address": "Ruta Nacional 9 1799",
     "lat": -32.932899,
@@ -446,7 +581,7 @@
     "date": "2026-08-23",
     "durationSec": 35,
     "lightLux": 403,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -461,7 +596,22 @@
     "date": "2026-08-24",
     "durationSec": 44,
     "lightLux": 7830,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1040,
+    "deviceId": "SC-108",
+    "deviceName": "Zeta",
+    "city": "La Plata",
+    "address": "Av. Colón 263",
+    "lat": -34.933664,
+    "lng": -57.997774,
+    "recordedAt": "2026-08-24T11:43:14-03:00",
+    "date": "2026-08-24",
+    "durationSec": 20,
+    "lightLux": 8986,
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -476,7 +626,7 @@
     "date": "2026-08-24",
     "durationSec": 43,
     "lightLux": 8498,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -491,13 +641,13 @@
     "date": "2026-08-24",
     "durationSec": 36,
     "lightLux": 7944,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1042,
-    "deviceId": "SC-102",
-    "deviceName": "Salva",
+    "deviceId": "SC-105",
+    "deviceName": "Rulo",
     "city": "Mar del Plata",
     "address": "Ruta Nacional 9 4276",
     "lat": -37.969558,
@@ -506,13 +656,13 @@
     "date": "2026-08-24",
     "durationSec": 19,
     "lightLux": 6439,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1046,
     "deviceId": "SC-107",
-    "deviceName": "Dario",
+    "deviceName": "Tano",
     "city": "La Plata",
     "address": "Calle 7 4192",
     "lat": -34.93784,
@@ -521,7 +671,37 @@
     "date": "2026-08-25",
     "durationSec": 15,
     "lightLux": 8142,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1047,
+    "deviceId": "SC-109",
+    "deviceName": "Carmona",
+    "city": "Rosario",
+    "address": "Camino Centenario 1286",
+    "lat": -32.896817,
+    "lng": -60.657298,
+    "recordedAt": "2026-08-25T11:20:13-03:00",
+    "date": "2026-08-25",
+    "durationSec": 41,
+    "lightLux": 1068,
+    "url": "/samples/people.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": 1044,
+    "deviceId": "SC-109",
+    "deviceName": "Carmona",
+    "city": "Mendoza",
+    "address": "Bv. Oroño 1534",
+    "lat": -32.889128,
+    "lng": -68.818592,
+    "recordedAt": "2026-08-25T11:20:28-03:00",
+    "date": "2026-08-25",
+    "durationSec": 27,
+    "lightLux": 4449,
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -536,7 +716,7 @@
     "date": "2026-08-25",
     "durationSec": 39,
     "lightLux": 3925,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
@@ -551,13 +731,13 @@
     "date": "2026-08-25",
     "durationSec": 51,
     "lightLux": 5478,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   },
   {
     "id": 1048,
     "deviceId": "SC-107",
-    "deviceName": "Dario",
+    "deviceName": "Tano",
     "city": "Buenos Aires",
     "address": "Av. Libertador 2480",
     "lat": -34.665284,
@@ -566,7 +746,7 @@
     "date": "2026-08-25",
     "durationSec": 58,
     "lightLux": 454,
-    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    "url": "/samples/people.mp4",
     "thumbnail": ""
   }
 ]
