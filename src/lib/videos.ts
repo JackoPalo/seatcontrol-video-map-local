@@ -17,15 +17,24 @@ export function invalidateVideoCache(): void {
 const SAMPLE_ID_OFFSET = 1_000_000_000_000;
 
 // One extra sample stamped with the current day (Argentina time), so the demo
-// always has something on today's date. The device is picked from the sample
-// fleet by hashing the date: random-looking, but stable through the day.
-function todaySample(devices: Video[]): Video {
+// always has something on today's date, independent of videos.json (which may
+// be empty). The device is picked from a small fleet by hashing the date:
+// random-looking, but stable through the day.
+const SAMPLE_FLEET = [
+  { deviceId: "SC-101", deviceName: "Nacho" },
+  { deviceId: "SC-102", deviceName: "El Rojo" },
+  { deviceId: "SC-103", deviceName: "La Negra" },
+  { deviceId: "SC-104", deviceName: "Pumita" },
+  { deviceId: "SC-105", deviceName: "Rulo" },
+];
+
+function todaySample(): Video {
   const now = new Date();
   const date = new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/Argentina/Buenos_Aires",
   }).format(now);
   const hash = [...date].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
-  const device = devices[hash % devices.length];
+  const device = SAMPLE_FLEET[hash % SAMPLE_FLEET.length];
   const recorded = new Date(now.getTime() - 5 * 60_000);
   const time = new Intl.DateTimeFormat("en-GB", {
     timeZone: "America/Argentina/Buenos_Aires",
@@ -46,7 +55,7 @@ function todaySample(devices: Video[]): Video {
     date,
     durationSec: 30,
     lightLux: 4200,
-    url: device.url,
+    url: "/samples/people.mp4",
     thumbnail: "",
     sample: true,
   };
@@ -58,7 +67,7 @@ function sampleVideos(): Video[] {
     id: v.id + SAMPLE_ID_OFFSET,
     sample: true,
   }));
-  return [...base, todaySample(base)];
+  return [...base, todaySample()];
 }
 
 // Source priority for real data: direct device ingest (Vercel Blob) >
